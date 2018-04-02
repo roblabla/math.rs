@@ -46,7 +46,7 @@ pub use llround::*;
 
 pub use dim::*;
 pub use ma::*;
-// pub use fmod::*;
+pub use fmod::*;
 // pub use remquo::*;
 
 pub use sin::{sin, sinf};
@@ -76,44 +76,44 @@ pub use ldexp::*;
 // The modules are split and grouped by function class.
 //
 // Operations on signs:
-mod abs;
-mod copysign;
+pub mod abs;
+pub mod copysign;
 // Rounding operations:
-mod round;
-mod floor;
-mod ceil;
-mod trunc;
-mod lround;
-mod llround;
+pub mod round;
+pub mod floor;
+pub mod ceil;
+pub mod trunc;
+pub mod lround;
+pub mod llround;
 // Simple arithmetic operations:
-mod dim;
-mod ma;                         // Needs tests
-// mod fmod;
+pub mod dim;
+pub mod ma;                         // Needs tests
+pub mod fmod;
 // The complex operations such as sqrt, log etc:
-mod sqrt;
-mod exp;
+pub mod sqrt;
+pub mod exp;
 // Even more complex – trigonometric – operations:
-mod sin;
-mod cos;
-mod tan;
-mod asin;
-mod acos;
+pub mod sin;
+pub mod cos;
+pub mod tan;
+pub mod asin;
+pub mod acos;
 
 // Introspection:
-mod logb;
-mod ilogb;
-mod scalbn;
-mod scalbln;
-mod modf;
-mod nextafter;
+pub mod logb;
+pub mod ilogb;
+pub mod scalbn;
+pub mod scalbln;
+pub mod modf;
+pub mod nextafter;
 // Other:
-mod min;
-mod max;
-mod hypot;
+pub mod min;
+pub mod max;
+pub mod hypot;
 // Compatibility (possibly non-conforming):
-mod nearbyint;
-mod rint; // Also provides lrint and llrint
-mod ldexp;
+pub mod nearbyint;
+pub mod rint; // Also provides lrint and llrint
+pub mod ldexp;
 
 // Common functionality.
-mod utils;
+pub mod utils;

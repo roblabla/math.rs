@@ -30,7 +30,6 @@ pub fn _cos(i: f64) -> f64 {
 
 /// Calculate the cosine of an input.
 #[no_mangle]
-#[inline]
 pub extern "C" fn cos(mut i: f64) -> f64 {
     // If x is not finite, the function must return a NAN.
     if !i.is_finite() {

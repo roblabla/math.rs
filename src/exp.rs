@@ -22,7 +22,6 @@ const F64_LN2_HIGH: f64 = 6.93147180369123816490E-01;
 
 /// Calculate e to the power of i.
 #[no_mangle]
-#[inline]
 pub extern "C" fn expf(mut i: f32) -> f32 {
     if i < F32_LOW {
         // e to the power of less than F32_LOW is +0.

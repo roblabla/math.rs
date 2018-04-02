@@ -1,7 +1,6 @@
 use core::{f32, f64};
-use core::num::{Int, Float};
 
-use utils::{AsBits, Bits};
+use utils::{Float, AsBits, Bits};
 use utils::{F32_SIGN_MASK, F32_DENORMAL_EXP, F32_MANTISSA_MASK, F32_MAX_EXP};
 use utils::{F64_SIGN_MASK, F64_DENORMAL_EXP, F64_MANTISSA_MASK, F64_MAX_EXP};
 
@@ -83,7 +82,6 @@ pub extern fn fmodf(l: f32, r: f32) -> f32 {
 
 /// Compute the floating point remainder of dividing `l` by `r`.
 #[no_mangle]
-#[inline]
 pub extern fn fmod(l: f64, r: f64) -> f64 {
     let (mut lbits, mut rbits) = (l.as_bits(), r.as_bits());
     let (mut lexp, mut rexp) = (lbits.get_exponent(), rbits.get_exponent());
