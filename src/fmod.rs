@@ -44,7 +44,7 @@ pub extern fn fmodf(l: f32, r: f32) -> f32 {
 
     while lexp > rexp {
         lexp -= 1;
-        let temp = lbits - rbits;
+        let temp = lbits.wrapping_sub(rbits);
         if temp == 0 {
             return 0.0 * l;
         } else if temp >> 31 == 0 {
@@ -55,7 +55,7 @@ pub extern fn fmodf(l: f32, r: f32) -> f32 {
 
     {
         // lexp <= rexp
-        let temp = lbits - rbits;
+        let temp = lbits.wrapping_sub(rbits);
         if temp == 0 {
             return 0.0 * l;
         } else if temp >> 31 == 0 {
@@ -112,7 +112,7 @@ pub extern fn fmod(l: f64, r: f64) -> f64 {
 
     while lexp > rexp {
         lexp -= 1;
-        let temp = lbits - rbits;
+        let temp = lbits.wrapping_sub(rbits);
         if temp == 0 {
             return 0.0 * l;
         } else if temp >> 63 == 0 {
@@ -122,7 +122,7 @@ pub extern fn fmod(l: f64, r: f64) -> f64 {
     }
     {
         // lexp <= rexp
-        let temp = lbits - rbits;
+        let temp = lbits.wrapping_sub(rbits);
         if temp == 0 {
             return 0.0 * l;
         } else if temp >> 63 == 0 {
